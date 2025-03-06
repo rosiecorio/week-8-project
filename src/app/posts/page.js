@@ -26,8 +26,13 @@ export default async function Posts({searchParams}) {
     return (
         <>
             <h1>Posts Page</h1>
-            <Link href="/posts?sortby=asc">Sort by Alphabetical</Link>
-            <Link href="/posts?sortby=desc">Sort by Reverse Alphabetical</Link>
+            <section className="flex flex-row justify-between">
+                <div>
+                    <Link href="/posts?sortby=asc">Sort by Alphabetical</Link>
+                    <Link href="/posts?sortby=desc">Sort by Reverse Alphabetical</Link>
+                </div>
+                <button>Add New Post</button>
+            </section>
             <div>
                 {posts.map((post) => (
                     <div className="flex flex-row" key={post.id}>
