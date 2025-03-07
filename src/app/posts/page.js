@@ -3,7 +3,6 @@ import Link from "next/link"
 import pg from "pg"
 import PostForm from "@/components/PostForm"
 import DeletePostButton from "@/components/DeletePostButton"
-import Alphabetical from "@/components/Alphabetical"
 
 export default async function Posts({searchParams}) {
     
@@ -13,7 +12,7 @@ export default async function Posts({searchParams}) {
 
     const data = await db.query(`SELECT * FROM posts`)
     const posts = data.rows
-    console.log(posts)
+    // console.log(posts)
 
     const query = await searchParams
 
@@ -33,7 +32,7 @@ export default async function Posts({searchParams}) {
     return (
         <section className="text-white">
             <section className="flex flex-row justify-around bg-blue-600">
-                <div className="flex flex-row gap-4">
+                <div className="flex flex-row gap-4 mb-3">
                     {/* <form className="text-black" action={onSubmit}>
                         <label className="text-white mx-2" htmlFor="dropdown">Sort By:</label>
                         <select className="text-sm" id="dropdown" placeholder="default">
@@ -51,20 +50,21 @@ export default async function Posts({searchParams}) {
                     <Link href="/posts?sortby=new">Most Recent</Link>
                     <Link href="/posts">Default</Link>
                 </div>
-                <FormButton text={"Add Post"}><PostForm /></FormButton>
+                <FormButton text={"Add Post?"}><PostForm /></FormButton>
             </section>
             <h1 className="text-center my-5 text-3xl">Threads</h1>
             <div className="flex flex-row flex-wrap justify-evenly">
                 {posts.map((post) => (
-                    <div className="flex flex-row p-3 gap-5 w-[500px] bg-gradient-to-br from-purple-600 to-blue-600 my-5 rounded-xl hover:" key={post.id}>
+                    <div className="flex flex-row p-3 gap-5 w-[500px] bg-gradient-to-br from-blue-600 to-sky-700 my-5 rounded-xl hover:scale-105" key={post.id}>
                         <img className="h-40" src={post.img_url}/>
+                        <Link href={`/posts/${post.id}`}>
                         <div className="w-80 flex-wrap">
                             <div className="flex flex-row justify-between">
-                                <Link className="underline" href={`/posts/${post.id}`}><h2>{post.title}</h2></Link>
+                                <h2 className="text-lg underline">{post.title}</h2>
                                 <DeletePostButton id={post.id}/>
                             </div>
-                            <p>{post.content}</p>                            
-                        </div>
+                            <p className="text-sm">{post.content}</p>                            
+                        </div></Link>
                     </div>
                 ))}
             </div>

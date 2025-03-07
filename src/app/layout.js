@@ -1,11 +1,24 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Sniglet, Geist_Mono, Inter, Righteous } from "next/font/google";
 import "./globals.css";
 import NavBar from "@/components/NavBar";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const righteous = Righteous({
+  variable: "--font-righteous-sans",
   subsets: ["latin"],
-});
+  weight: "400"
+})
+
+const inter = Inter({
+  variable: "--font-inter-sans",
+  subsets: ["latin"],
+  weight: "400"
+})
+
+const sniglet = Sniglet({
+  variable: "--font-sniglet-sans",
+  subsets: ["latin"],
+  weight: "400"
+})
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
@@ -20,9 +33,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body>
         <NavBar />
         {children}
       </body>
