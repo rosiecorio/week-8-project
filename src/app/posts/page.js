@@ -56,7 +56,7 @@ export default async function Posts({searchParams}) {
             <h1 className="text-center my-5 text-3xl">Threads</h1>
             <div className="flex flex-row flex-wrap justify-evenly">
                 {posts.map((post) => (
-                    <div className="flex flex-row p-3 gap-5 w-[500px] bg-gradient-to-br from-purple-600 to-blue-600 my-5 rounded-xl hover:text-red-400" key={post.id}>
+                    <div className="flex flex-row p-3 gap-5 w-[500px] bg-gradient-to-br from-purple-600 to-blue-600 my-5 rounded-xl hover:" key={post.id}>
                         <img className="h-40" src={post.img_url}/>
                         <div className="w-80 flex-wrap">
                             <div className="flex flex-row justify-between">
