@@ -19,7 +19,7 @@ export default async function Page() {
           <div className="flex flex-col items-center">
             <h2>{lastPost.title}</h2>
             <p>{lastPost.content}</p>
-            <Image src={lastPost.img_url} height={400} width={100} alt="image of book cover"/>
+            <Image src={lastPost.img_url} height={800} width={200} alt="image of book cover"/>
           </div>
         </section>
     </div>

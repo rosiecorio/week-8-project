@@ -2,7 +2,7 @@
 import { useState } from "react"
 import CommentForm from "./actions"
 
-export default function FormButton({children}) {
+export default function FormButton({children, text}) {
     
     const [showModal, setShowModal] = useState(false)
 
@@ -10,11 +10,11 @@ export default function FormButton({children}) {
         setShowModal(!showModal)
     }
     
-    console.log(children)
+    // console.log(children)
 
     return (
         <div>
-            <button onClick={toggleModal}>Add</button>
+            <button onClick={toggleModal}>{text}</button>
             {showModal && (<div>{children}</div>)}            
         </div>       
         

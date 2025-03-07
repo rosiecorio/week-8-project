@@ -4,7 +4,7 @@ import { handlePostDelete } from "./actions"
 
 export default function DeletePostButton({id}) {
     return (
-        <button onClick={() => {
+        <button className="inline-flex text-white bg-indigo-500 border-0 py-1 px-2 focus:outline-none hover:bg-indigo-600 rounded text-xs" onClick={() => {
             handlePostDelete(id)
         }}>X</button>
     )

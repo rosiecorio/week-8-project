@@ -24,7 +24,6 @@ export default async function Page({params}) {
     
     return (
         <section className="flex flex-col items-center">
-            <h1>Page for post number {id}</h1>
             <section className="border-white border-2 max-w-lg m-5 flex flex-col items-center gap-5 p-3">
                 <h2>{post.title}</h2>
                 <h3>{post.content}</h3>
@@ -32,15 +31,15 @@ export default async function Page({params}) {
             <Image src={post.img_url} alt="book cover image" height={100} width={200}/>
             <section className="flex flex-col items-center m-5">
                 {comments.map((comment) => (
-                    <div className="border-white border-2 w-80 p-3 flex flex-col items-center" key={comment.id}>
+                    <div className="border-white border-2 w-80 p-3 flex flex-col items-center rounded-2xl" key={comment.id}>
                         <DeleteCommentButton id={comment.id} />
                         <h2>{comment.name}</h2>
                         <p>{comment.comment}</p>
                     </div>
                 ))}
             </section>
-            <div className="border-white border-2 w-fit h-fit p-2 flex items-center justify-center">
-                <FormButton><CommentForm id={id}/></FormButton>
+            <div className="border-white border-2 w-fit h-fit p-2 flex items-center justify-center rounded-xl">
+                <FormButton text={"Add Comment"}><CommentForm id={id}/></FormButton>
             </div>        
         </section>
     )
