@@ -1,12 +1,12 @@
 'use client'
 
-import { handleDelete } from "./actions"
+import { handleCommentDelete } from "./actions"
 
-export default function DeleteButton({id}) {
+export default function DeleteCommentButton({id}) {
 
     return (
         <button onClick={() => {
-            handleDelete(id)
+            handleCommentDelete(id)
         }}>X</button>
     )
 }

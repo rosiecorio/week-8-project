@@ -1,7 +1,9 @@
 import pg from "pg"
 import Image from "next/image"
-import DeleteButton from "@/components/DeleteButton"
+import DeleteCommentButton from "@/components/DeleteButton"
 import Link from "next/link"
+import FormButton from "@/components/FormButton"
+import CommentForm from "@/components/CommentForm"
 
 export default async function Page({params}) {
     
@@ -31,14 +33,14 @@ export default async function Page({params}) {
             <section className="flex flex-col items-center m-5">
                 {comments.map((comment) => (
                     <div className="border-white border-2 w-80 p-3 flex flex-col items-center" key={comment.id}>
-                        <DeleteButton id={comment.id} />
+                        <DeleteCommentButton id={comment.id} />
                         <h2>{comment.name}</h2>
                         <p>{comment.comment}</p>
                     </div>
                 ))}
             </section>
             <div className="border-white border-2 w-fit h-fit p-2 flex items-center justify-center">
-                <button>Add Comment</button>
+                <FormButton><CommentForm id={id}/></FormButton>
             </div>        
         </section>
     )
