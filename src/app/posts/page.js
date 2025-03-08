@@ -31,7 +31,7 @@ export default async function Posts({searchParams}) {
     
     return (
         <section className="text-white">
-            <section className="flex flex-row justify-around bg-blue-600">
+            <section className="flex flex-row justify-around bg-gradient-to-b from-blue-600 to-sky-800">
                 <div className="flex flex-row gap-4 mb-3">
                     {/* <form className="text-black" action={onSubmit}>
                         <label className="text-white mx-2" htmlFor="dropdown">Sort By:</label>
