@@ -55,15 +55,15 @@ export default async function Posts({searchParams}) {
             <h1 className="text-center my-5 text-3xl">Threads</h1>
             <div className="flex flex-row flex-wrap justify-evenly">
                 {posts.map((post) => (
-                    <div className="flex flex-row p-3 gap-5 w-[500px] bg-gradient-to-br from-blue-600 to-sky-700 my-5 rounded-xl hover:scale-105" key={post.id}>
+                    <div className="flex flex-row p-3 gap-5 w-[450px] bg-gradient-to-br from-blue-600 to-sky-700 my-5 rounded-xl hover:scale-105 hover:border-white hover:border-2" key={post.id}>
                         <img className="h-40" src={post.img_url}/>
                         <Link href={`/posts/${post.id}`}>
                         <div className="w-80 flex-wrap">
-                            <div className="flex flex-row justify-between">
+                            <div className="flex flex-row justify-between relative">
                                 <h2 className="text-lg underline">{post.title}</h2>
                                 <DeletePostButton id={post.id}/>
                             </div>
-                            <p className="text-sm">{post.content}</p>                            
+                            <p className="text-sm w-3/4">{post.content}</p>                            
                         </div></Link>
                     </div>
                 ))}

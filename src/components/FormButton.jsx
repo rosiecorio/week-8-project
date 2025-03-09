@@ -13,7 +13,7 @@ export default function FormButton({children, text}) {
     // console.log(children)
 
     return (
-        <div>
+        <div className="hover:bg-sky-600">
             <button onClick={toggleModal}>{text}</button>
             {showModal && (<div>{children}</div>)}            
         </div>       
