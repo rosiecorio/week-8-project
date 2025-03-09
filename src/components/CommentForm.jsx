@@ -22,9 +22,9 @@ export default async function CommentForm({id}) {
     return (
         <form className="flex flex-col" action={handleSubmit}>
             <label htmlFor="name">Name:</label>
-            <input name="name" id="name" />
+            <input className="text-black" name="name" id="name" />
             <label htmlFor="comment">Comment:</label>
-            <textarea name="comment" id="comment" />
+            <textarea className="text-black" name="comment" id="comment" />
             <button type="submit">Submit</button>
         </form>
     )
